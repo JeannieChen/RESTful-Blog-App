@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+
+<div class="ui piled segment">
+  <h2 class="ui header"><%= blog.title %></h2>
+	<!-- <img class="ui centered medium image" src="<%= blog.image %>"> -->
+  <p><%= blog.body %></p>
+	<h2 class="ui sub header" id="showpageDate"><%= blog.created.toDateString() %></h2>
+	
+	<a class = "circular ui icon button" href="/blogs/<%= blog._id %>/edit">
+		<i class="icon edit"></i>
+	</a>	
+	<form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST" id="deleteBtn">
+		<a class = "circular ui icon button"> <i class="icon trash"></i></a>
+	</form>
+		
+</div>
+
+<%- include("partials/footer") %>
