@@ -6,7 +6,15 @@ var express = require("express"),
 	methodOverride = require("method-override");
 
 // COPY: mongodb, view engine setup
-mongoose.connect("mongodb://localhost/restful_blog_app");
+mongoose.connect("mongodb+srv://JeannieChen:283300Cyj@cluster0-ybpsb.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log("Connected to DB.");
+}).catch(err => {
+	console.log('ERROR: ', err.message)
+});
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
