@@ -6,7 +6,7 @@ var express = require("express"),
 	methodOverride = require("method-override");
 
 // COPY: mongodb, view engine setup
-mongoose.connect("mongodb+srv://JeannieChen:283300Cyj@cluster0-ybpsb.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://JeannieChen:[pwd]@cluster0-ybpsb.mongodb.net/test?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
 	useCreateIndex: true
 }).then(() => {
